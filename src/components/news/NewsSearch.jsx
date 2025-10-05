@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../styles/NewsSearch.module.css";
 import useFetch from "../../hooks/useFetch";
+import NewsCard from "./NewsCard";
 
 export default function NewsSearch() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("technology");
 
-  // Build API URL with parameters
-  const apiUrl = `https://react-personal-dashboard-55q1oku23-lyns-projects-2db2e792.vercel.app/api/news?category=${category}&pageSize=5`;
+  // // Build API URL with parameters
+  const apiUrl = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=e19e8f7b0de54c3d8478d98e40f503a0&pageSize=5`;
 
   const { data, loading, error } = useFetch(apiUrl);
 
