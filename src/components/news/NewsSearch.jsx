@@ -9,7 +9,7 @@ export default function NewsSearch() {
   // Build API URL with parameters
   const apiUrl = `https://react-personal-dashboard-55q1oku23-lyns-projects-2db2e792.vercel.app/api/news?category=${category}&pageSize=5`;
 
-  const { data, loading, error, refetch } = useFetch(apiUrl);
+  const { data, loading, error } = useFetch(apiUrl);
 
   const handleSearch = (event) => {
     event.preventDefault();
