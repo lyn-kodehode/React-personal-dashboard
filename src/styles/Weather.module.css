@@ -1,0 +1,77 @@
+/* .refreshBtn {
+  color: var(--color-text-primary);
+  background: none;
+} */
+.refreshBtn {
+  background: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.refreshBtn:hover:not(:disabled) {
+  /* background: var(--color-accent-secondary); */
+  /* background: var(--color-accent); */
+  background: var(--color-subtle);
+  color: var(--color-accent-secondary);
+  transform: scale(1.1);
+}
+
+.refreshButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cityCount {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--color-subtle);
+  border-radius: 0.5rem;
+}
+.searchInput {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-accent-secondary);
+  box-shadow: 0 0 0 3px rgba(242, 177, 98, 0.1);
+}
+
+.searchInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-subtle);
+}
+.searchInput::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+/* Loading and error states */
+.loading {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.error {
+  color: var(--color-error, #ff4444);
+  background: var(--color-error-bg, #ffe6e6);
+  padding: 0.5rem;
+  border-radius: 4px;
+}

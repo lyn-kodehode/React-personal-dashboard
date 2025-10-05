@@ -1,0 +1,155 @@
+.searchBooksContainer {
+  padding: 0;
+  background: transparent;
+  border: none;
+  display: block; /* Ensure container is block, not flex */
+}
+.searchBooksContainer h3 {
+  color: var(--color-text-secondary);
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  /* flex-wrap: nowrap; */
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+}
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(242, 177, 98, 0.2);
+}
+
+.searchBtn {
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+.searchBtn:hover {
+  background: var(--color-accent-secondary);
+}
+.searchBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.error {
+  color: var(--color-accent-secondary);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+.results {
+  margin-top: 1rem;
+  display: block; /* Ensure results are block elements */
+  width: 100%;
+}
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.resultsHeader h4 {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: 1rem;
+}
+.pageInfo {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+.bookList {
+  margin-bottom: 1rem;
+}
+
+.bookItem {
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: var(--color-bg);
+  transition: border-color 0.2s;
+  cursor: pointer; /* Add cursor pointer */
+}
+.bookItem:hover {
+  border-color: var(--color-accent);
+  background: var(--color-subtle); /* Add hover background */
+}
+.bookItem h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.bookItem p {
+  margin: 0.25rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pageBtn {
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.pageBtn:hover:not(:disabled) {
+  background: var(--color-subtle);
+  border-color: var(--color-accent);
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activePage {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+/* Loading and error states */
+.error {
+  color: var(--color-error, #ff4444);
+  background: var(--color-error-bg, #ffe6e6);
+  padding: 0.5rem;
+  border-radius: 4px;
+}

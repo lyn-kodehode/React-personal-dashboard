@@ -1,0 +1,92 @@
+.favoritesContainer {
+  padding: 0;
+  background: transparent;
+  border: none;
+  display: block;
+}
+
+.favoritesContainer h3 {
+  color: var(--color-text-secondary);
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.emptyMessage {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
+
+.results {
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.resultsHeader h4 {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.bookList {
+  margin-bottom: 1rem;
+}
+
+.bookItem {
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: var(--color-bg);
+  transition: border-color 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.bookItem:hover {
+  border-color: var(--color-accent);
+  background: var(--color-subtle);
+}
+
+.bookItem h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.bookItem p {
+  margin: 0.25rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-accent-secondary);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.removeBtn:hover {
+  background: #e74c3c;
+}

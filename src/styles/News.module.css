@@ -1,0 +1,21 @@
+.newsCardWrapper {
+  /* padding: 0 .25rem; */
+  height: 450px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* display: flex;
+  flex-direction: column;
+  gap: 1rem; */
+}
+/* Loading and error states */
+.loading,
+.error {
+  text-align: center;
+  padding: 1rem;
+  color: var(--color-text);
+}
+
+.error {
+  color: var(--color-error, #ff4444);
+  background: var(--color-error-bg, #ffe6e6);
+}

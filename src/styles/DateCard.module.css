@@ -1,0 +1,37 @@
+.dateContainer {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--color-shadow-1);
+  /* box-shadow: var(--color-shadow-2); */
+  text-align: center;
+  font-family: var(--font-primary);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dateContainer:hover {
+  transform: translateY(-0.1rem);
+  box-shadow: var(--color-shadow-hover);
+}
+.day {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.dayNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.month,
+.year {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}

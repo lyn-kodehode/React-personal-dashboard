@@ -1,0 +1,131 @@
+.cityCardContainer {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--color-shadow-2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* padding: 1rem; */
+}
+
+/* weathercategory specific styling */
+.cityCardContainer.clear {
+  background: linear-gradient(135deg, #87ceeb 0%, #e0f6ff 100%);
+}
+.cityCardContainer.clear * {
+  color: #1a1a1a;
+}
+
+.cityCardContainer.cloudy {
+  background: linear-gradient(135deg, #b0c4de 0%, #f0f8ff 100%);
+  color: #2a2a2a;
+}
+.cityCardContainer.cloudy * {
+  color: #2a2a2a;
+}
+
+.cityCardContainer.rainy {
+  background: linear-gradient(135deg, #4682b4 0%, #e6f3ff 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.cityCardContainer.rainy * {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cityCardContainer.snowy {
+  background: linear-gradient(135deg, #e6e6fa 0%, #f8f8ff 100%);
+  color: #1a1a1a;
+}
+.cityCardContainer.snowy * {
+  color: #1a1a1a;
+}
+
+.cityCardContainer.stormy {
+  background: linear-gradient(135deg, #2f4f4f 0%, #f0f8ff 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.cityCardContainer.stormy * {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cityCardContainer.foggy {
+  background: linear-gradient(135deg, #d3d3d3 0%, #f5f5f5 100%);
+  color: #2a2a2a;
+}
+.cityCardContainer.foggy * {
+  color: #2a2a2a;
+}
+
+.cityCardContainer:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--color-shadow-hover);
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cityInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.temperatureSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.weatherIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.weatherDescription {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin: 0;
+}
+.timeOfDay {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+.timeIcon {
+  font-size: 1rem;
+}
+.expandBtn {
+  background: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+.expandBtn:hover {
+  transform: scale(1.3);
+}
+.removeBtn {
+  justify-self: start;
+  background-color: var(--color-accent);
+}
+.removeBtn:hover {
+  /* box-shadow: var(--color-shadow-1); */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(255, 255, 255, 0.05);
+}
