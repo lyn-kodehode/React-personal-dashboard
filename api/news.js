@@ -34,7 +34,7 @@ export default async function handler(request, response) {
 
   try {
     // Build URL with source parameter
-    let newsApiUrl = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&language=${language}&sortBy=${sortBy}&apiKey=${process.env.API_KEY}&pageSize=${pageSize}`;
+    let newsApiUrl = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${process.env.NEWS_API_KEY}&pageSize=${pageSize}`;
 
     // Add source if provided
     if (source) {
