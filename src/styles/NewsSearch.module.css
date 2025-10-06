@@ -1,0 +1,79 @@
+.newsContainer {
+  padding: 1rem;
+}
+
+.newsContainer h3 {
+  color: var(--color-text-secondary);
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.searchBtn {
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.searchBtn:hover {
+  background: var(--color-accent-hover);
+}
+
+.searchBtn:disabled {
+  background: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.categorySelect {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.categorySelect:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.newsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text-secondary);
+}
