@@ -4,6 +4,7 @@ import Todo from "../components/todo/Todo.jsx";
 import Fact from "../components/fact/Fact.jsx";
 import MyNews from "../components/news/MyNews.jsx";
 import Favorites from "../components/gutendex/Favorites.jsx";
+import { NewsProvider } from "../context/NewsContext.jsx";
 
 export default function Dashboard() {
   const widgets = [
@@ -48,7 +49,11 @@ export default function Dashboard() {
       case "favorites":
         return <Favorites />;
       case "mynews":
-        return <MyNews />;
+        return (
+          <NewsProvider>
+            <MyNews />
+          </NewsProvider>
+        );
       case "fact":
         return <Fact />;
       case "todo":

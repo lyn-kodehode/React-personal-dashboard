@@ -6,6 +6,11 @@ export default function useFetch(url, options = {}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // dont fetch if URL is null/undefined
+    if (!url) {
+      setLoading(false);
+      return;
+    }
     const fetchData = async () => {
       try {
         setLoading(true);

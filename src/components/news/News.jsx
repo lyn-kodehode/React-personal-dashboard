@@ -1,21 +1,24 @@
+import { NewsProvider } from "../../context/NewsContext";
 import styles from "../../styles/News.module.css";
 import { Link, Outlet } from "react-router-dom";
 
 export default function News() {
   return (
-    <section className={styles.newsPage}>
-      <header className={styles.widgetHeader}>
-        <h2>News & Articles</h2>
-      </header>
-      <nav className={styles.newsNav}>
-        <Link to=".">Search</Link>
-        <Link to="categories">Categories</Link>
-        <Link to="mynews">My News</Link>
-      </nav>
-      <div className={styles.widgetContent}>
-        <Outlet />
-      </div>
-    </section>
+    <NewsProvider>
+      <section className={styles.newsPage}>
+        <header className={styles.widgetHeader}>
+          <h2>News & Articles</h2>
+        </header>
+        <nav className={styles.newsNav}>
+          <Link to=".">Search</Link>
+          <Link to="categories">Categories</Link>
+          <Link to="mynews">My News</Link>
+        </nav>
+        <div className={styles.widgetContent}>
+          <Outlet />
+        </div>
+      </section>
+    </NewsProvider>
   );
 }
 

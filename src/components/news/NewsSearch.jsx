@@ -1,23 +1,20 @@
-import { useState, useEffect } from "react";
 import styles from "../../styles/NewsSearch.module.css";
-import useFetch from "../../hooks/useFetch";
 import NewsCard from "./NewsCard";
+import useNewsAPI from "../../hooks/useNewsAPI";
 
 export default function NewsSearch() {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("technology");
-
-  // // Build API URL with parameters
-  const apiUrl = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=e19e8f7b0de54c3d8478d98e40f503a0&pageSize=5`;
-
-  const { data, loading, error } = useFetch(apiUrl);
+  const { data, loading, error, searchNews, searchQuery, setSearchQuery } =
+    useNewsAPI();
 
   const handleSearch = (event) => {
     event.preventDefault();
-    if (query.trim()) {
-      // TODO: Add search functionality
-      console.log("Searching for:", query);
+    if (searchQuery.trim()) {
+      searchNews(searchQuery);
     }
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery("");
   };
 
   if (loading) return <div className={styles.loading}>Loading news...</div>;
@@ -31,17 +28,26 @@ export default function NewsSearch() {
       <form onSubmit={handleSearch} className={styles.searchForm}>
         <input
           type="text"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
           placeholder="Search for news..."
           className={styles.searchInput}
         />
         <button type="submit" disabled={loading} className={styles.searchBtn}>
           {loading ? "Searching..." : "Search"}
         </button>
+        {searchQuery && (
+          <button
+            type="button"
+            onClick={handleClearSearch}
+            className={styles.clearBtn}
+          >
+            Clear Search
+          </button>
+        )}
       </form>
       {/* Category filter */}
-      <select
+      {/* <select
         value={category}
         onChange={(event) => setCategory(event.target.value)}
         className={styles.categorySelect}
@@ -50,23 +56,21 @@ export default function NewsSearch() {
         <option value="sports">Sports</option>
         <option value="business">Business</option>
         <option value="entertainment">Entertainment</option>
-      </select>
+      </select> */}
 
       {/* News results using NewsCard */}
       {data?.articles && (
         <div className={styles.newsList}>
-          {data.articles.map((article, index) => (
-            <NewsCard
-              key={index}
-              title={article.title}
-              url={article.url}
-              description={article.description}
-              content={article.content}
-              source={article.source.name}
-              publishedAt={article.publishedAt}
-              imageUrl={article.urlToImage}
-            />
+          {data.articles.map((article) => (
+            <NewsCard key={article.url} article={article} />
           ))}
+        </div>
+      )}
+
+      {/* No results message */}
+      {data?.articles && data.articles.length === 0 && (
+        <div className={styles.noResults}>
+          No articles found for "{searchQuery}". Try a different search term.
         </div>
       )}
     </div>

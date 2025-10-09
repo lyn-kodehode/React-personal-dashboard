@@ -3,6 +3,7 @@ import { useShowResults } from "../../hooks/useShowResults";
 import { useFavorites } from "../../hooks/useFavorites";
 import BookDetails from "./BookDetails";
 import styles from "../../styles/Favorites.module.css";
+import { Link } from "react-router-dom";
 
 export default function Favorites() {
   const { favorites } = useFavorites();
@@ -21,6 +22,8 @@ export default function Favorites() {
   return (
     <div className={styles.favoritesContainer}>
       <h3>My Favorites</h3>
+
+      {/* No favorites message */}
       {favorites.length === 0 ? (
         <p className={styles.emptyMessage}>
           No favorite books yet. Add some books to your favorites!
@@ -49,6 +52,9 @@ export default function Favorites() {
           </div>
         </div>
       )}
+      <Link to="/gutendex" className={styles.addMoreLink}>
+        Add More Books
+      </Link>
     </div>
   );
 }
