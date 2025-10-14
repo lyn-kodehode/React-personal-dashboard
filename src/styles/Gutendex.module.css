@@ -6,7 +6,8 @@
   box-shadow: var(--color-shadow-1);
   margin: 1rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2vh auto;
+  height: 80%;
 }
 .widgetHeader {
   border-bottom: 1px solid var(--color-border);

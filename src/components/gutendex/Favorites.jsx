@@ -14,14 +14,16 @@ export default function Favorites() {
   if (selectedBookId) {
     return (
       <div className={styles.favoritesContainer}>
-        <BookDetails bookId={selectedBookId} onBack={handleBackToResults} />
+        <div className={styles.bookDetailsContainer}>
+          <BookDetails bookId={selectedBookId} onBack={handleBackToResults} />
+        </div>
       </div>
     );
   }
 
   return (
     <div className={styles.favoritesContainer}>
-      <h3>My Favorites</h3>
+      {/* <h3>My Favorites</h3> */}
 
       {/* No favorites message */}
       {favorites.length === 0 ? (

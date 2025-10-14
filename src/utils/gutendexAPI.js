@@ -43,8 +43,8 @@ export const getBookDetails = async (id) => {
   }
 };
 
-export const getBooksByCategory = async (category) => {
-  const categoryEndpoint = `${gutendex_base_url}?topic=${category}`;
+export const getBooksByCategory = async (category, page = 1) => {
+  const categoryEndpoint = `${gutendex_base_url}?topic=${category}&page=${page}`;
 
   try {
     const response = await fetch(categoryEndpoint);

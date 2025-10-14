@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h1>My Dashboard</h1>
+      <h1 className={styles.dashboardHeader}>My Dashboard</h1>
       <nav>
         <div className={styles.pages}>
           <ul className={styles.pagesList}>
@@ -19,6 +19,9 @@ export default function Header() {
             </li>
             <li>
               <Link to="/news">News</Link>
+            </li>
+            <li>
+              <Link to="/todo">Tasks</Link>
             </li>
             <li>
               <Link to="/about">About</Link>

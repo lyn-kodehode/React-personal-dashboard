@@ -2,34 +2,50 @@
   padding: 0;
   background: transparent;
   border: none;
-  display: block;
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  /* overflow: hidden; */
 }
-
-.favoritesContainer h3 {
-  color: var(--color-text-secondary);
-  margin: 0 0 1rem 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+.bookDetailsContainer {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  min-height: 0;
+  padding: 0.5rem;
 }
-
 .emptyMessage {
   color: var(--color-text-secondary);
   font-style: italic;
   text-align: center;
   padding: 2rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .results {
-  margin-top: 1rem;
-  display: block;
+  flex: 1;
+  flex-direction: column;
+  /* overflow-y: auto; */
+  /* scrollbar-width: none; */
+  /* margin-top: 1rem; */
+  margin-top: 0.5rem;
+  /* display: block; */
   width: 100%;
+  display: flex;
+  min-height: 0;
 }
 
 .resultsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-border);
 }
@@ -41,7 +57,12 @@
 }
 
 .bookList {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* min-height: 0; */
+  padding-bottom: 0.5rem;
 }
 
 .bookItem {
@@ -89,4 +110,15 @@
 
 .removeBtn:hover {
   background: #e74c3c;
+}
+.addMoreLink {
+  margin-top: auto;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-top: 1px solid var(--color-border);
+}
+.addMoreLink:hover {
+  color: var(--color-accent-hover);
 }

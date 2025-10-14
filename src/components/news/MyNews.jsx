@@ -8,7 +8,7 @@ export default function MyNews() {
 
   return (
     <div className={styles.myNewsContainer}>
-      <h3>My News</h3>
+      {/* <h3>My News</h3> */}
 
       {/* savedArticles not empty */}
       {savedArticles.length > 0 && (

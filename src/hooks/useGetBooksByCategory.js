@@ -22,7 +22,10 @@ export const useGetBooksByCategory = () => {
       setBooksByCategory(data.results);
       setTotalCount(data.count);
       setHasNext(!!data.next);
+      console.log("has Next:", hasNext);
+
       setHasPrevious(!!data.previous);
+      console.log("has Previous:", hasPrevious);
     } catch (error) {
       setError(error.message);
     } finally {

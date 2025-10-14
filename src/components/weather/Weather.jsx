@@ -139,6 +139,7 @@ export default function Weather() {
 
   return (
     <div className={styles.weatherContainer}>
+      {/* STATIC */}
       <form onSubmit={handleSearch}>
         <input
           type="search"
@@ -167,7 +168,10 @@ export default function Weather() {
             </span>
           </div>
         )}
+      </form>
 
+      {/* SCROLLABLE: results */}
+      <div className={styles.resultsContainer}>
         {savedCities.map(({ name, weather, lastUpdated }) => (
           <CityCard
             key={name}
@@ -180,7 +184,7 @@ export default function Weather() {
             onRemove={handleRemove}
           />
         ))}
-      </form>
+      </div>
     </div>
   );
 }

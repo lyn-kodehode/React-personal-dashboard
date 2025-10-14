@@ -13,10 +13,6 @@ export default function NewsSearch() {
     }
   };
 
-  const handleClearSearch = () => {
-    setSearchQuery("");
-  };
-
   if (loading) return <div className={styles.loading}>Loading news...</div>;
   if (error) return <div className={styles.error}>Error: {error.message}</div>;
 
@@ -36,27 +32,7 @@ export default function NewsSearch() {
         <button type="submit" disabled={loading} className={styles.searchBtn}>
           {loading ? "Searching..." : "Search"}
         </button>
-        {searchQuery && (
-          <button
-            type="button"
-            onClick={handleClearSearch}
-            className={styles.clearBtn}
-          >
-            Clear Search
-          </button>
-        )}
       </form>
-      {/* Category filter */}
-      {/* <select
-        value={category}
-        onChange={(event) => setCategory(event.target.value)}
-        className={styles.categorySelect}
-      >
-        <option value="technology">Technology</option>
-        <option value="sports">Sports</option>
-        <option value="business">Business</option>
-        <option value="entertainment">Entertainment</option>
-      </select> */}
 
       {/* News results using NewsCard */}
       {data?.articles && (

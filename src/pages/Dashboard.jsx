@@ -1,10 +1,11 @@
 import Clock from "../components/clock/Clock.jsx";
 import Weather from "../components/weather/Weather.jsx";
 import Todo from "../components/todo/Todo.jsx";
-import Fact from "../components/fact/Fact.jsx";
+// import Fact from "../components/fact/Fact.jsx";
 import MyNews from "../components/news/MyNews.jsx";
 import Favorites from "../components/gutendex/Favorites.jsx";
 import { NewsProvider } from "../context/NewsContext.jsx";
+import MyTodos from "../components/todo/MyTodos.jsx";
 
 export default function Dashboard() {
   const widgets = [
@@ -28,11 +29,11 @@ export default function Dashboard() {
       title: "My News",
       component: MyNews,
     },
-    {
-      id: "fact",
-      title: "Fact of the Day",
-      component: Fact,
-    },
+    // {
+    //   id: "fact",
+    //   title: "Fact of the Day",
+    //   component: Fact,
+    // },
     {
       id: "todo",
       title: "To-Do",
@@ -54,10 +55,11 @@ export default function Dashboard() {
             <MyNews />
           </NewsProvider>
         );
-      case "fact":
-        return <Fact />;
+      // case "fact":
+      //   return <Fact />;
       case "todo":
-        return <Todo />;
+        // return <Todo />;
+        return <MyTodos />;
       default:
         return null;
     }
@@ -69,7 +71,7 @@ export default function Dashboard() {
         {widgets.map(({ id, title }) => {
           return (
             <section className={`${id}-section`} key={id}>
-              <header>
+              <header className="widget-header">
                 <h2>{title}</h2>
               </header>
               {renderWidget(id)}

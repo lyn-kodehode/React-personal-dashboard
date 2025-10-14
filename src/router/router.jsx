@@ -11,6 +11,7 @@ import NewsSearch from "../components/news/NewsSearch";
 import NewsCategoryMenu from "../components/news/NewsCategoryMenu";
 import News from "../components/news/News";
 import MyNews from "../components/news/MyNews";
+import Todo from "../components/todo/Todo";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +64,15 @@ export const router = createBrowserRouter([
           {
             path: "mynews",
             element: <MyNews />,
+          },
+        ],
+      },
+      {
+        path: "todo",
+        element: <Todo />,
+        children: [
+          {
+            // index: true, element: <
           },
         ],
       },

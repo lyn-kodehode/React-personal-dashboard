@@ -40,7 +40,10 @@ export default function Clock() {
     <div className={styles.clockWrapper}>
       {/* clock component */}
       <div className={styles.clockContainer}>
-        <div className={styles.clockDot}></div>
+        <div className={styles.clockDotContainer}>
+          <div className={styles.clockDot}></div>
+        </div>
+
         {numbers.map((num, index) => {
           return (
             <div key={index} className={`${styles.clockHour} ${styles[num]}`}>
