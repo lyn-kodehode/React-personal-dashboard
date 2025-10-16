@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import About from "../pages/About";
 import Dashboard from "../pages/Dashboard";
 import App from "../App";
-import Dev from "../pages/Dev";
+// import Dev from "../pages/Dev";
 import Gutendex from "../components/gutendex/Gutendex";
 import BookSearch from "../components/gutendex/BookSearch";
 import CategoryMenu from "../components/gutendex/CategoryMenu";
@@ -15,11 +15,15 @@ import Todo from "../components/todo/Todo";
 
 export const router = createBrowserRouter([
   {
-    path: "/*",
+    path: "/React-personal-dashboard/",
     element: <App />,
     children: [
       {
         index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "dashboard",
         element: <Dashboard />,
       },
       // {

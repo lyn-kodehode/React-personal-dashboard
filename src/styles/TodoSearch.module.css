@@ -1,50 +1,14 @@
-.searchForm {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.searchInput {
-  flex: 1;
-  padding: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: var(--color-bg);
-  color: var(--color-text-primary);
-}
-
-.searchInput:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(242, 177, 98, 0.1);
-}
-
-.filterSelect {
-  padding: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: var(--color-bg);
-  color: var(--color-text-primary);
-  cursor: pointer;
-}
-/* 
 .searchTasksContainer {
   margin-bottom: 1.5rem;
-}
-
-.searchForm {
   display: flex;
   gap: 0.75rem;
   align-items: center;
   padding: 1rem;
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  box-shadow: var(--color-shadow-1);
 }
 
 .filterCategory,
-.sortSelect {
+.sortCategory
+/* .sortSelect  */ {
   padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -57,18 +21,23 @@
 }
 
 .filterCategory:focus,
-.sortSelect:focus {
+.sortCategory:focus {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(242, 177, 98, 0.1);
 }
-
 .filterCategory:hover,
-.sortSelect:hover {
+.sortCategory:hover {
   border-color: var(--color-accent);
 }
 
 .searchInput {
+  /* flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text-primary); */
   flex: 1;
   padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
@@ -85,9 +54,9 @@
   box-shadow: 0 0 0 3px rgba(242, 177, 98, 0.1);
 }
 
-.searchInput::placeholder {
+/* .searchInput::placeholder {
   color: var(--color-text-secondary);
-}
+} */
 
 .searchBtn {
   padding: 0.75rem 1.5rem;
@@ -104,12 +73,38 @@
 
 .searchBtn:hover {
   background: var(--color-accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(242, 177, 98, 0.3);
+  border: 1px solid var(--color-border);
+  /* transform: translateY(-1px); */
+  /* box-shadow: 0 4px 12px rgba(242, 177, 98, 0.3); */
 }
 
 .searchBtn:active {
   transform: translateY(0);
 }
+/* .filterSelect {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  cursor: pointer;
+} */
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 */

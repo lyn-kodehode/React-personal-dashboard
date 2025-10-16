@@ -23,11 +23,3 @@ export default function TodoCreate() {
     </div>
   );
 }
-
-/* 
-Create new tasks
--Form to add new task
--Input for task text
--Optional: priority, due date, category
--Submit and add to task list
- */

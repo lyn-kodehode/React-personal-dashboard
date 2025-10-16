@@ -10,7 +10,7 @@ export default function MyTodos() {
       <div className={styles.taskList}>
         <TodoList />
       </div>
-      <Link to={"/todo"} className={styles.addTaskLink}>
+      <Link to="/React-personal-dashboard/todo" className={styles.addTaskLink}>
         Add New Task
       </Link>
     </div>

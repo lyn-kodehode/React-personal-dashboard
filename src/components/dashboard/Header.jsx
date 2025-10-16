@@ -12,19 +12,19 @@ export default function Header() {
         <div className={styles.pages}>
           <ul className={styles.pagesList}>
             <li>
-              <Link to="/">Dashboard</Link>
+              <Link to="/React-personal-dashboard/">Dashboard</Link>
             </li>
             <li>
-              <Link to="/gutendex">Books</Link>
+              <Link to="/React-personal-dashboard/gutendex">Books</Link>
             </li>
             <li>
-              <Link to="/news">News</Link>
+              <Link to="/React-personal-dashboard/news">News</Link>
             </li>
             <li>
-              <Link to="/todo">Tasks</Link>
+              <Link to="/React-personal-dashboard/todo">Tasks</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/React-personal-dashboard/about">About</Link>
             </li>
             {/* <li>
               <Link to="/dev">Dev</Link>

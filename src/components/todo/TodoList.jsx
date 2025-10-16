@@ -31,21 +31,51 @@ export default function TodoList() {
 
   return (
     <div className={styles.todoListContainer}>
-      {filteredTasks.map((task) => (
-        <TodoCard
-          key={task.id}
-          task={task}
-          onToggle={toggleComplete}
-          onEdit={editTask}
-          onDelete={deleteTask}
-        />
-      ))}
-      <button
-        onClick={handleDeleteAll}
-        disabled={!shouldEnableDeleteAllCompleted}
-      >
-        Delete ALL Completed Tasks
-      </button>
+      {/* No tasks message */}
+      {filteredTasks.length === 0 ? (
+        <p className={styles.emptyMessage}>No tasks created yet.</p>
+      ) : (
+        <div className={styles.results}>
+          <div className={styles.resultsHeader}>
+            {" "}
+            <h4>
+              You have {filteredTasks.length} saved task
+              {filteredTasks.length === 1 ? "" : "s"}
+            </h4>
+          </div>
+
+          <div className={styles.taskList}>
+            {filteredTasks.map((task) => (
+              <TodoCard
+                key={task.id}
+                task={task}
+                onToggle={toggleComplete}
+                onEdit={editTask}
+                onDelete={deleteTask}
+                className={styles.taskItem}
+              />
+            ))}
+            {/* <div className={styles.deleteSection}>
+              <button
+                onClick={handleDeleteAll}
+                disabled={!shouldEnableDeleteAllCompleted}
+                className={styles.deleteAllBtn}
+              >
+                Delete ALL Completed Tasks
+              </button>
+            </div> */}
+          </div>
+          <div className={styles.deleteSection}>
+            <button
+              onClick={handleDeleteAll}
+              disabled={!shouldEnableDeleteAllCompleted}
+              className={styles.deleteAllBtn}
+            >
+              Delete ALL Completed Tasks
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

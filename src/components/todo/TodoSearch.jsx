@@ -28,41 +28,42 @@ export default function TodoSearch() {
       {/* <h3>Search Tasks</h3> */}
 
       {/* search form */}
-      <form onSubmit={handleSearch} className={styles.searchForm}>
-        <select
-          className={styles.filterCategory}
-          value={filterStatus}
-          onChange={handleFilterChange}
-        >
-          {/* <option value="">Search from...</option> */}
-          <option value="all">All Tasks</option>
-          <option value="completed">Completed Tasks</option>
-          <option value="incomplete">Incomplete Tasks</option>
-        </select>
 
-        {/* sort by date/alphabetical */}
-        <select
-          className={styles.sortCategory}
-          value={sortBy}
-          onChange={handleSortChange}
-        >
-          <option value="date-descending">Newest to Oldest</option>
-          <option value="date-ascending">Oldest to Newest</option>
-          <option value="alphabetical-descending">A to Z </option>
-          <option value="alphabetical-ascending">Z to A</option>
-        </select>
+      <select
+        className={styles.filterCategory}
+        value={filterStatus}
+        onChange={handleFilterChange}
+        // onKeyDown={(event) => {
+        //   if (event.key === "Enter") {
+        //     handleSearch();
+        //   }
+        // }}
+      >
+        {/* <option value="">Search from...</option> */}
+        <option value="all">All Tasks</option>
+        <option value="completed">Completed Tasks</option>
+        <option value="incomplete">Incomplete Tasks</option>
+      </select>
 
-        <input
-          type="text"
-          placeholder="Search tasks..."
-          className={styles.searchInput}
-          value={searchQuery}
-          onChange={handleSearch}
-        />
-        <button type="submit" className={styles.searchBtn}>
-          Search
-        </button>
-      </form>
+      {/* sort by date/alphabetical */}
+      <select
+        className={styles.sortCategory}
+        value={sortBy}
+        onChange={handleSortChange}
+      >
+        <option value="date-descending">Newest to Oldest</option>
+        <option value="date-ascending">Oldest to Newest</option>
+        <option value="alphabetical-descending">A to Z </option>
+        <option value="alphabetical-ascending">Z to A</option>
+      </select>
+
+      <input
+        type="search"
+        placeholder="Search tasks..."
+        className={styles.searchInput}
+        value={searchQuery}
+        onChange={handleSearch}
+      />
     </div>
   );
 }

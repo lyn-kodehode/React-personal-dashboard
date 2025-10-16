@@ -1,0 +1,58 @@
+.overviewContainer {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: var(--color-shadow-1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.overviewContainer h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.overviewCard {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 0;
+}
+
+.overviewCard:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--color-shadow-hover);
+}
+
+.overviewCard h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.overviewCard p {
+  margin: 0.125rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
