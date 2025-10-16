@@ -70,11 +70,6 @@ export const router = createBrowserRouter([
       {
         path: "todo",
         element: <Todo />,
-        children: [
-          {
-            // index: true, element: <
-          },
-        ],
       },
     ],
   },

@@ -1,0 +1,100 @@
+.todoCardContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.todoCardContainer:hover {
+  box-shadow: var(--color-shadow-2);
+  border-color: var(--color-accent);
+}
+
+.taskCheckbox {
+  /* margin-top: 0.25rem; */
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+.taskContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.taskText {
+  /* flex: 1; */
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  /* line-height: 1.4; */
+}
+.taskDates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dateInfo {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+.dateLabel {
+  color: var(--color-text-secondary);
+}
+.dateValue {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.taskText.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  /* align-items: flex-start; */
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 0.25rem 0.5rem;
+  /* border: 1px solid var(--color-border); */
+  border-radius: 4px;
+  /* background: var(--color-bg); */
+  /* color: var(--color-text-primary); */
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.editBtn {
+  background: var(--color-accent);
+  color: white;
+}
+
+.editBtn:hover {
+  background: var(--color-accent-hover);
+}
+.deleteBtn {
+  background: #dc3545;
+  color: white;
+}
+.deleteBtn:hover {
+  background: #c82333;
+}
+/* 
+.taskMeta {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.25rem;
+} */

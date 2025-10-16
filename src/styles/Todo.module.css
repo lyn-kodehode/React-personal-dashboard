@@ -1,0 +1,32 @@
+.todoPage {
+  padding: 1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--color-shadow-1);
+  margin: 1rem;
+  max-width: 1200px;
+  margin: 2vh auto;
+  height: 80%;
+}
+
+.todoHeader {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.todoHeader h2 {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.todoContent {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1rem;
+  min-height: 300px;
+}

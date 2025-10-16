@@ -36,7 +36,7 @@ export default function Dashboard() {
     // },
     {
       id: "todo",
-      title: "To-Do",
+      title: "My Tasks",
       component: Todo,
     },
   ];

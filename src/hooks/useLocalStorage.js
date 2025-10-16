@@ -13,9 +13,6 @@ export function useLocalStorage(key, initialValue) {
     }
   });
 
-  // Add this log to see what's changing:
-  // console.log(`useLocalStorage ${key} changed:`, storedValue);
-
   // updates LocalStorage whenever storedValue changes
   useEffect(() => {
     try {
