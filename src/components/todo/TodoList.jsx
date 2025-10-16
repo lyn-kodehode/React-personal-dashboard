@@ -55,7 +55,7 @@ export default function TodoList() {
                 className={styles.taskItem}
               />
             ))}
-            {/* <div className={styles.deleteSection}>
+            <div className={styles.deleteSection}>
               <button
                 onClick={handleDeleteAll}
                 disabled={!shouldEnableDeleteAllCompleted}
@@ -63,9 +63,9 @@ export default function TodoList() {
               >
                 Delete ALL Completed Tasks
               </button>
-            </div> */}
+            </div>
           </div>
-          <div className={styles.deleteSection}>
+          {/* <div className={styles.deleteSection}>
             <button
               onClick={handleDeleteAll}
               disabled={!shouldEnableDeleteAllCompleted}
@@ -73,7 +73,7 @@ export default function TodoList() {
             >
               Delete ALL Completed Tasks
             </button>
-          </div>
+          </div> */}
         </div>
       )}
     </div>

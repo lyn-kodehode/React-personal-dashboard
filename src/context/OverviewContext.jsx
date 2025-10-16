@@ -16,7 +16,7 @@ export const useOverviewContext = () => {
 
 export const OverviewProvider = ({ children }) => {
   const [favoriteBooks] = useLocalStorage("favoriteBooks", []);
-  const [savedArticles] = useLocalStorage("savedArticles", []);
+  const [savedArticles] = useLocalStorage("savedNewsArticles", []);
   const [savedTasks] = useLocalStorage("savedTasks", []);
   const [savedCities] = useLocalStorage("savedCities", []);
 

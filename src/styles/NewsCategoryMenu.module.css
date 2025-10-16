@@ -1,10 +1,11 @@
 .newsCategoryContainer {
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 0.75rem;
 }
 
 .newsCategoryContainer h3 {
   color: var(--color-text-secondary);
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -17,7 +18,8 @@
   background: var(--color-bg);
   color: var(--color-text-primary);
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin-bottom: 0.5rem;
 }
 
 .newsCategoryList:focus {
@@ -33,7 +35,7 @@
   background: var(--color-bg);
   color: var(--color-text-primary);
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .newsSourceList:focus {
@@ -44,19 +46,19 @@
 .newsList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .loading,
 .error {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   color: var(--color-text-secondary);
 }
 
 .noResults {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   color: var(--color-text-secondary);
   font-style: italic;
 }

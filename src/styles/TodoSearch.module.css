@@ -1,5 +1,4 @@
 .searchTasksContainer {
-  margin-bottom: 1.5rem;
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -7,8 +6,7 @@
 }
 
 .filterCategory,
-.sortCategory
-/* .sortSelect  */ {
+.sortCategory {
   padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: 6px;

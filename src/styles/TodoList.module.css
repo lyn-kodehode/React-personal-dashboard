@@ -1,15 +1,13 @@
 .todoListContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  /* display: flex;
-  flex-direction: column;
-  gap: 1rem; */
+  height: 100%;
+  min-height: 0;
 }
 
-.todoListContainer::-webkit-scrollbar {
+/* .todoListContainer::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .emptyMessage {
   /* text-align: center;
@@ -28,11 +26,9 @@
 
 .results {
   flex: 1;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  width: 100%;
   display: flex;
-  /* min-height: 0; */
+  flex-direction: column;
+  min-height: 0;
 }
 .resultsHeader {
   display: flex;
@@ -48,14 +44,44 @@
   font-size: 1rem;
 }
 .taskList {
-  flex: 1;
+  /* flex: 1;
   overflow-y: auto;
   scrollbar-width: none;
   padding-bottom: 0.5rem;
   min-height: 0;
-  height: 100%;
+  height: 100%; */
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+  min-height: 0;
+  padding: 0.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.taskItem {
+.taskList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.taskList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.taskList::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+.taskList::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* .taskItem {
   padding: 0.75rem;
   border: 1px solid var(--color-border);
   border-radius: 4px;
@@ -64,19 +90,28 @@
   transition: border-color 0.2s;
   cursor: pointer;
   position: relative;
-}
-.taskItem:hover {
+} */
+/* .taskItem:hover {
   border-color: var(--color-accent);
   background: var(--color-subtle);
-}
+} */
 .deleteAllBtn {
-  padding: 0.75rem 1.5rem;
+  /* padding: 0.75rem 1.5rem;
   background: var(--color-error);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s; */
+  padding: 0.5rem 1rem;
+  background: var(--color-accent-secondary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.2s;
 }
@@ -91,10 +126,23 @@
   cursor: not-allowed;
   opacity: 0.6;
 }
+.deleteAllBtn:disabled:hover {
+  background: var(--color-subtle);
+  color: var(--color-text-secondary);
+  transform: none;
+  box-shadow: none;
+}
 .deleteSection {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   padding: 1rem;
   margin-top: 1rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border); */
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0 0 4px 4px;
+  border-top: none;
 }

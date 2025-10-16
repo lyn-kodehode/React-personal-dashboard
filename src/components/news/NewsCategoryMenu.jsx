@@ -19,6 +19,7 @@ export default function NewsCategoryMenu() {
   const [currentCategory, setCurrentCategory] = useState("");
 
   const categories = [
+    "all",
     "business",
     "entertainment",
     "general",
@@ -46,11 +47,11 @@ export default function NewsCategoryMenu() {
     setCurrentCategory(selectedCategory);
     setSelectedSourceId("");
 
-    if (selectedCategory) {
+    if (selectedCategory === "all") {
+      getHeadlines();
+    } else {
       browseCategory(selectedCategory);
       getSources(selectedCategory);
-    } else {
-      getHeadlines();
     }
   };
 
@@ -91,8 +92,9 @@ export default function NewsCategoryMenu() {
         onChange={handleCategoryChange}
         disabled={loading}
       >
-        <option value="">All Categories</option>
-        {categories.map((category) => (
+        <option value="">Choose a category...</option>
+        <option value="all">All Categories</option>
+        {categories.slice(1).map((category) => (
           <option key={category} value={category}>
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </option>
