@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { formatCreatedAt, formatLastUpdated } from "../utils/dateFormatter";
+// import { formatCreatedAt, formatLastUpdated } from "../utils/dateFormatter";
 import { useLocalStorage } from "./useLocalStorage";
 
 export default function useTodo() {
@@ -7,7 +7,7 @@ export default function useTodo() {
   const [taskInput, setTaskInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [filterStatus, setFilterStatus] = useState("all"); //all, completed, incomplete
-  // const [sortBy, setSortBy] = useState("date-desc"); // date-desc, date-asc, alphabetical-asc, alphabetical-desc
+  const [sortBy, setSortBy] = useState("date-descending"); // date-ascending. alphabetical-ascending, alphabetical-descending
 
   const addTask = () => {
     const timestamp = Date.now();
@@ -15,8 +15,10 @@ export default function useTodo() {
       id: timestamp,
       text: taskInput.trim(),
       completed: false,
-      dateCreated: formatCreatedAt(timestamp),
-      lastEdited: formatLastUpdated(timestamp),
+      // dateCreated: formatCreatedAt(timestamp),
+      // lastEdited: formatLastUpdated(timestamp),
+      dateCreated: timestamp,
+      lastEdited: timestamp,
     };
     setAllTasks((prevAllTasks) => [...prevAllTasks, newTaskItem]);
     setTaskInput("");
@@ -30,7 +32,8 @@ export default function useTodo() {
           ? {
               ...savedTask,
               text: newTaskInput.trim(),
-              lastEdited: formatLastUpdated(Date.now()),
+              // lastEdited: formatLastUpdated(Date.now()),
+              lastEdited: Date.now(),
             }
           : savedTask
       )
@@ -58,7 +61,8 @@ export default function useTodo() {
           ? {
               ...savedTask,
               completed: !savedTask.completed,
-              lastEdited: formatLastUpdated(Date.now()),
+              // lastEdited: formatLastUpdated(Date.now()),
+              lastEdited: Date.now(),
             }
           : savedTask
       )
@@ -69,8 +73,25 @@ export default function useTodo() {
     const sortedTasks = [...tasks];
 
     switch (sortBy) {
+      case "date-descending":
+        return sortedTasks.sort(
+          (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)
+        );
+      case "date-ascending":
+        return sortedTasks.sort(
+          (a, b) => new Date(a.dateCreated) - new Date(b.dateCreated)
+        );
+      case "alphabetical-descending":
+        return sortedTasks.sort((a, b) =>
+          a.text.toLowerCase().localeCompare(b.text.toLowerCase())
+        );
+
+      case "alphabetical-ascending":
+        return sortedTasks.sort((a, b) =>
+          b.text.toLowerCase().localeCompare(a.text.toLowerCase())
+        );
       default:
-        return sortTasks;
+        return sortedTasks;
     }
   };
 
@@ -112,13 +133,15 @@ export default function useTodo() {
     setSearchQuery,
     filterStatus,
     setFilterStatus,
+    sortTasks,
+    sortBy,
+    setSortBy,
     // actions
     addTask,
     deleteTask,
     deleteAllCompleted,
     toggleComplete,
     editTask,
-    sortTasks,
     // getter
     getAllCompleted,
     getAllIncomplete,

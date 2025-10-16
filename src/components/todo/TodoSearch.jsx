@@ -2,8 +2,14 @@ import { useTodoContext } from "../../context/TodoContext";
 import styles from "../../styles/TodoSearch.module.css";
 
 export default function TodoSearch() {
-  const { searchQuery, setSearchQuery, filterStatus, setFilterStatus } =
-    useTodoContext();
+  const {
+    searchQuery,
+    setSearchQuery,
+    filterStatus,
+    setFilterStatus,
+    sortBy,
+    setSortBy,
+  } = useTodoContext();
 
   const handleFilterChange = (event) => {
     setFilterStatus(event.target.value);
@@ -12,6 +18,11 @@ export default function TodoSearch() {
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
+
+  const handleSortChange = (event) => {
+    setSortBy(event.target.value);
+  };
+
   return (
     <div className={styles.searchTasksContainer}>
       {/* <h3>Search Tasks</h3> */}
@@ -30,7 +41,16 @@ export default function TodoSearch() {
         </select>
 
         {/* sort by date/alphabetical */}
-        <select name="" id=""></select>
+        <select
+          className={styles.sortCategory}
+          value={sortBy}
+          onChange={handleSortChange}
+        >
+          <option value="date-descending">Newest to Oldest</option>
+          <option value="date-ascending">Oldest to Newest</option>
+          <option value="alphabetical-descending">A to Z </option>
+          <option value="alphabetical-ascending">Z to A</option>
+        </select>
 
         <input
           type="text"

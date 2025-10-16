@@ -9,14 +9,25 @@ export default function TodoList() {
     toggleComplete,
     editTask,
     deleteTask,
+    getAllCompleted,
+    filterStatus,
+    sortTasks,
   } = useTodoContext();
-  const filteredTasks = getFilteredTasks();
-  //  const completedTasks = getAllCompleted();
+  const filteredTasks = sortTasks(getFilteredTasks());
+  const completedTasks = getAllCompleted();
 
   // Only enable delete when filter shows completed tasks
-  // const shouldEnableDelete =
-  //   (filterStatus === "all" || filterStatus === "completed") &&
-  //   completedTasks.length > 0;
+  const shouldEnableDeleteAllCompleted =
+    // filterStatus === "all" ||
+    filterStatus === "completed" && completedTasks.length > 0;
+
+  const handleDeleteAll = () => {
+    if (
+      window.confirm("Are you sure you want to delete ALL completed tasks?")
+    ) {
+      deleteAllCompleted();
+    }
+  };
 
   return (
     <div className={styles.todoListContainer}>
@@ -29,15 +40,12 @@ export default function TodoList() {
           onDelete={deleteTask}
         />
       ))}
-      <button onClick={deleteAllCompleted}>Delete Completed Tasks</button>
+      <button
+        onClick={handleDeleteAll}
+        disabled={!shouldEnableDeleteAllCompleted}
+      >
+        Delete ALL Completed Tasks
+      </button>
     </div>
   );
 }
-
-/* 
-Full task management page
--Display all tasks with full CRUD operations
--Edit, delete, mark complete
--Use TodoCard component for each task
--Search and filter functionality
-*/
