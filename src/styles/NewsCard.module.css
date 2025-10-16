@@ -112,15 +112,22 @@
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(242, 177, 98, 0.3);
 }
-/* .newsCardContainer {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  margin-bottom: 1.5rem;
-  border: 1px solid #475569;
-  position: relative;
-} */
+.removeBtn {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  background: var(--color-accent-secondary); /* Red for remove */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background: #c82333; /* Darker red on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(200, 35, 51, 0.3);
+}

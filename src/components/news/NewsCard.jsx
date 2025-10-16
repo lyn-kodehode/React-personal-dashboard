@@ -51,7 +51,8 @@ export default function NewsCard({ article }) {
           </button>
           <button
             onClick={() => toggleSave(article)}
-            className={styles.saveBtn}
+            // className={styles.saveBtn}
+            className={isArticleSaved(url) ? styles.removeBtn : styles.saveBtn}
           >
             {isArticleSaved(url) ? "Remove article" : "Add article"}
           </button>
