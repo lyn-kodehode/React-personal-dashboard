@@ -25,6 +25,7 @@ export const lightTheme = {
   // "--color-text-tertiary": "#F2E8DF",
   "--color-accent": "#F2B263",
   "--color-accent-secondary": "#F28585",
+  "--color-accent-hover": "#E6A055",
   "--color-subtle": "#F2C6C2",
   "--color-border": "rgba(0,0,0,0.1)",
   "--color-shadow-1": "0 2px 6px rgba(0,0,0,0.1)",
@@ -43,6 +44,7 @@ export const darkTheme = {
   // "--color-text-tertiary": "#111111",
   "--color-accent": "#F2B263",
   "--color-accent-secondary": "#F28585",
+  "--color-accent-hover": "#E6A055",
   "--color-subtle": "#3A3A3A",
   "--color-border": "rgba(255,255,255,0.1)",
   "--color-shadow-1":
