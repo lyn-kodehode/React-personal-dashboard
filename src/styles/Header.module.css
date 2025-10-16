@@ -50,7 +50,8 @@
 }
 .pagesList a:hover {
   background: var(--color-subtle);
-  color: var(--color-accent);
+  /* color: var(--color-accent); */
+  color: var(--color-text-primary);
 }
 .controls {
   display: flex;

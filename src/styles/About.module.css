@@ -1,0 +1,48 @@
+.aboutContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--color-text-primary);
+}
+
+.aboutContainer h1 {
+  color: var(--color-accent); /* Keep orange for "About" title */
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.aboutContent {
+  line-height: 1.6;
+}
+
+.aboutContent h2 {
+  color: var(--color-text-primary);
+  /* Changed to secondary for "Features" */
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.aboutContent p {
+  margin-bottom: 1rem;
+  color: var(--color-text-primary); /* Changed to primary for paragraph text */
+}
+
+.aboutContent ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.aboutContent li {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary); /* Changed to primary for list items */
+}
+
+/* Special styling for feature names */
+.featureName {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  color: var(
+    --color-accent
+  ); /* Keep orange for "Books", "News", "Tasks", "Weather" */
+  font-size: 1.1em;
+}
