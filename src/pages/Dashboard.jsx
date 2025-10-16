@@ -7,6 +7,7 @@ import Favorites from "../components/gutendex/Favorites.jsx";
 import { NewsProvider } from "../context/NewsContext.jsx";
 import MyTodos from "../components/todo/MyTodos.jsx";
 import { TodoProvider } from "../context/TodoContext.jsx";
+import Overview from "../components/overview/Overview.jsx";
 
 export default function Dashboard() {
   const widgets = [
@@ -25,11 +26,11 @@ export default function Dashboard() {
       title: "My Books",
       component: Favorites,
     },
-    // {
-    //   id: "overview",
-    //   title: "Overview",
-    //   component: Overview,
-    // },
+    {
+      id: "overview",
+      title: "Overview",
+      component: Overview,
+    },
     {
       id: "mynews",
       title: "My News",
@@ -57,8 +58,8 @@ export default function Dashboard() {
             <MyNews />
           </NewsProvider>
         );
-      // case "fact":
-      //   return <Fact />;
+      case "overview":
+        return <Overview />;
       case "todo":
         return (
           <TodoProvider>

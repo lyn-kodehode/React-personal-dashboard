@@ -99,7 +99,7 @@ button {
 }
 .dashboard-container {
   display: grid;
-  grid-template-areas: "clock weather books" "clock news todo";
+  grid-template-areas: "clock weather books" "overview news todo";
   grid-template-rows: 42vh 42vh;
   grid-template-columns: 1fr 1.5fr 1.5fr;
   gap: 2vh;
@@ -110,6 +110,7 @@ button {
 .clock-section,
 .weather-section,
 .favorites-section,
+.overview-section,
 .mynews-section,
 .todo-section {
   background: var(--color-bg);
@@ -131,6 +132,9 @@ button {
 }
 .favorites-section {
   grid-area: books;
+}
+.overview-section {
+  grid-area: overview;
 }
 .mynews-section {
   grid-area: news;

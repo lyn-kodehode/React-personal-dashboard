@@ -26,9 +26,9 @@ export default function Header() {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/dev">Dev</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className={styles.controls}>
