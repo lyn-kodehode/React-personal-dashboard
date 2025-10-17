@@ -14,11 +14,27 @@ export default function About() {
         <ul>
           <li>
             <span className={styles.featureName}>Books</span> - Search and save
-            your favorite books using Gutendex API
+            your favorite books using{" "}
+            <a
+              href="https://gutendex.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.aboutApiLink}
+            >
+              Gutendex API
+            </a>
           </li>
           <li>
             <span className={styles.featureName}>News</span> - Browse and save
-            news articles using NewsAPI
+            news articles using{" "}
+            <a
+              href="https://newsapi.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.aboutApiLink}
+            >
+              NewsAPI
+            </a>
           </li>
           <li>
             <span className={styles.featureName}>Tasks</span> - Manage your
@@ -26,7 +42,15 @@ export default function About() {
           </li>
           <li>
             <span className={styles.featureName}>Weather</span> - Track weather
-            for your cities using Open Meteo Weather API
+            for your cities using{" "}
+            <a
+              href="https://open-meteo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.aboutApiLink}
+            >
+              Open Meteo Weather API
+            </a>
           </li>
         </ul>
 

@@ -46,3 +46,10 @@
   ); /* Keep orange for "Books", "News", "Tasks", "Weather" */
   font-size: 1.1em;
 }
+.aboutApiLink {
+  color: var(--color-accent-secondary);
+  transition: all 0.3s ease;
+}
+.aboutApiLink:hover {
+  color: var(--color-accent-hover);
+}

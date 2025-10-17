@@ -12,7 +12,7 @@ export default function useNewsAPI() {
   //   Build API based on mode
   const buildApiUrl = () => {
     const baseUrl = "https://newsapi.org/v2";
-    // const apiKey = "e19e8f7b0de54c3d8478d98e40f503a0";
+    // const apiKey = import.meta.env.VITE_NEWSAPI_KEY;
     const apiKey = "e19e8f7b0de54c3d8478d98e40f503a0";
 
     switch (apiMode) {
@@ -89,7 +89,3 @@ export default function useNewsAPI() {
     getSources,
   };
 }
-
-// ****************news per source
-// https://newsapi.org/v2/top-headlines?sources=${sourceId}&apiKey=e19e8f7b0de54c3d8478d98e40f503a0
-// https://newsapi.org/v2/everything?sources=${sourceId}&apiKey=e19e8f7b0de54c3d8478d98e40f503a0
