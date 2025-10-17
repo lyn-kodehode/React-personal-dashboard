@@ -11,16 +11,16 @@ export default function useNewsAPI() {
 
   //   Build API based on mode
   const buildApiUrl = () => {
-    // const baseUrl = "https://newsapi.org/v2";
+    const baseUrl = "https://newsapi.org/v2";
     // const baseUrl =
     //   "https://api.allorigins.win/raw?url=" +
     //   encodeURIComponent("https://newsapi.org/v2");
     // In src/hooks/useNewsAPI.js, line 14
     // Replace the baseUrl line with:
-    const baseUrl = import.meta.env.DEV
-      ? "https://newsapi.org/v2" // Use direct API for local development
-      : "https://api.allorigins.win/raw?url=" +
-        encodeURIComponent("https://newsapi.org/v2");
+    // const baseUrl = import.meta.env.DEV
+    //   ? "https://newsapi.org/v2" // Use direct API for local development
+    //   : "https://api.allorigins.win/raw?url=" +
+    //     encodeURIComponent("https://newsapi.org/v2");
     // const apiKey = import.meta.env.VITE_NEWSAPI_KEY;
     const apiKey = "e19e8f7b0de54c3d8478d98e40f503a0";
 
