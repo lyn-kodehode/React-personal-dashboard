@@ -52,8 +52,9 @@
   height: 100%; */
   flex: 1;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
+  /* scrollbar-width: thin; */
+  scrollbar-width: none;
+  /* scrollbar-color: var(--color-border) transparent; */
   min-height: 0;
   padding: 0.5rem;
   background: var(--color-bg);

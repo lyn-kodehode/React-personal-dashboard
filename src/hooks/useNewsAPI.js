@@ -11,12 +11,13 @@ export default function useNewsAPI() {
 
   // Determine API URL based on environment
   const getApiBaseUrl = () => {
-    // in development (localhost)
-    if (import.meta.env.DEV) {
-      return "http://localhost:5173/api/news";
-    }
+    // in development (localhost) but News wont work
+    // if (import.meta.env.DEV) {
+    //   return "http://localhost:5173/api/news";
+    // }
 
-    // in production (deployed on Vercel)
+    // in production works on GH-pages(deployed on Vercel)
+    // also needs for localhost dev
     return "https://react-personal-dashboard-seven.vercel.app/api/news";
 
     // works on Vercel only not GH-pages
@@ -35,7 +36,7 @@ export default function useNewsAPI() {
         return `${baseUrl}?mode=search&q=${searchQuery}&pageSize=10`;
       case "byCategory":
         // returns headlines per category in the US >> data.articles
-        return `${baseUrl}?mode=byCategory&=${newsCategory}&country=us&pageSize=10`;
+        return `${baseUrl}?mode=byCategory&category=${newsCategory}&country=us&pageSize=10`;
       case "headlines":
         // returns list of headlines in the US in all categories >> data.articles
         return `${baseUrl}?mode=headlines&country=us&pageSize=5`;
@@ -44,7 +45,7 @@ export default function useNewsAPI() {
         return `${baseUrl}?mode=sources&category=${newsCategory}&country=us`;
       case "bySource":
         //returns all news per source >> data.articles
-        return `${baseUrl}?mode=bySource&sources=${source}`;
+        return `${baseUrl}?mode=bySource&source=${source}`;
       default:
         return null;
     }

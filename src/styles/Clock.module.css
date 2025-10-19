@@ -1,6 +1,4 @@
 .clock-section {
-  /* height: 100%;
-  min-height: 0; */
   height: 100%;
   min-height: 0;
   display: flex;
@@ -9,17 +7,6 @@
   align-items: center;
 }
 .clockWrapper {
-  /* width: 300px; */
-  /* max-width: 300px; */
-
-  /* width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  overflow-y: auto;
-  scrollbar-width: none; */
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -27,61 +14,40 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.25rem, 1vh, 1rem);
   overflow: hidden;
   padding: 0.25rem;
   box-sizing: border-box;
 }
 .clockContainer {
-  /* width: 300px;
-  height: 300px; */
-  /* max-width: 300px; */
-  /* min-width: 0; */
-  /* border: 14px solid var(--color-text-primary); */
-
-  /* width: 100%;
-  aspect-ratio: 1;
-  background-color: var(--color-clock-bg);
-  border-radius: 50%;
-  border: clamp(4px, 1vw, 14px) solid var(--color-text-primary);
-  position: relative;
-  margin: 0 auto;
-  box-sizing: border-box;
-  box-shadow: var(--color-shadow-3); */
   width: 100%;
-  /* max-width: min(80vw, 80vh, 200px);  */
-  max-width: min(60vw, 60vh, 120px);
+  /* max-width: min(60vw, 60vh, 120px); */
+  /* max-width: min(80vw, 80vh, 250px); */
+  max-width: min(70%, 25vh, 200px);
   aspect-ratio: 1;
   background-color: var(--color-clock-bg);
   border-radius: 50%;
-  /* border: clamp(2px, 0.8vw, 8px) solid var(--color-text-primary); */
-  border: clamp(1px, 0.5vw, 4px) solid var(--color-text-primary);
+  /* border: clamp(1px, 0.5vw, 4px) solid var(--color-text-primary); */
+  border: clamp(2px, 0.5vw, 4px) solid var(--color-text-primary);
   position: relative;
   margin: 0 auto;
   box-sizing: border-box;
   box-shadow: var(--color-shadow-3);
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition */
   cursor: pointer; /* Optional: show it's interactive */
+  flex-shrink: 1;
 }
 
 .clockContainer:hover {
-  transform: scale(1.1); /* Scale up 10% on hover */
+  transform: scale(1.05); /* Scale up 10% on hover */
   box-shadow: var(--color-shadow-hover); /* Enhanced shadow on hover */
 }
 .clockDot {
   /* width: 14px; */
-  /* width: clamp(4px, 1vw, 14px);
-  height: clamp(4px, 1vw, 14px);
-  border-radius: 50%;
-  background-color: #ccc;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  box-shadow: 0 2px 4px -1px var(--color-text-primary); */
-  width: clamp(2px, 0.5vw, 4px); /* Smaller dot */
-  height: clamp(2px, 0.5vw, 4px);
+  /* width: clamp(2px, 0.5vw, 4px); 
+  height: clamp(2px, 0.5vw, 4px); */
+  width: clamp(4px, 0.8vw, 8px);
+  height: clamp(4px, 0.8vw, 8px);
   border-radius: 50%;
   background-color: #ccc;
   position: absolute;
@@ -95,13 +61,11 @@
   /* font-weight: 700;
   font-size: 22px; */
   position: absolute;
-  /* font-weight: 700; */
   font-weight: 500;
-  /* font-size: clamp(8px, 2vw, 22px);  */
-  font-size: clamp(6px, 2vw, 14px);
+  /* font-size: clamp(6px, 2vw, 14px); */
+  font-size: clamp(10px, 2.5vw, 18px);
   z-index: 4;
   color: var(--color-text-primary);
-  /* transform: translate(-50%, -50%); */
 }
 .twelve {
   top: 4%;
@@ -195,16 +159,65 @@
   border-top-right-radius: 50%;
 }
 .dateCardBelow {
-  /* margin-top: 0.625rem; 
-  width: 180px;*/
-
-  /* text-align: center;
-  width: 100%;
-  max-width: 90%;
-  margin: 0.5rem 1rem 0; */
-
   text-align: center;
   width: 100%;
-  max-width: 70%;
-  margin: 0.125rem 0.25rem 0;
+  /* max-width: 70%; */
+  /* margin: 0.125rem 0.25rem 0; */
+  flex-shrink: 0;
+}
+
+/******************** MEDIA QUERIES ********************/
+/* Mobile: 1 column stack */
+@media (max-width: 768px) {
+  .clockWrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .clockContainer {
+    /* max-width: min(40vw, 40vh, 180px); */
+    max-width: min(60vw, 250px);
+  }
+  .dateCardBelow {
+    max-width: min(60vw, 250px);
+  }
+}
+
+/* Tablet: 2 column */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .clockWrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: clamp(1rem, 3vw, 2rem); */
+    gap: clamp(2rem, 3vw, 1rem);
+  }
+  .clockContainer {
+    /* max-width: min(35vw, 35vh, 220px); */
+    max-width: min(45%, 18vh, 160px);
+    flex-shrink: 0;
+  }
+  .dateCardBelow {
+    max-width: 140px;
+    height: min(18vh, 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+}
+
+/* Desktop: 3 column */
+@media (min-width: 1201px) {
+  .clockWrapper {
+    flex-direction: column;
+    gap: clamp(0.5rem, 1.5vh, 1rem);
+  }
+
+  .clockContainer {
+    max-width: min(75%, 26vh, 220px);
+  }
+
+  .dateCardBelow {
+    max-width: min(75%, 26vh, 220px); /* Matches clock width */
+  }
 }
