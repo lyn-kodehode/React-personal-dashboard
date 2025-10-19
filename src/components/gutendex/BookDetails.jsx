@@ -1,11 +1,12 @@
 import { useGetBookDetails } from "../../hooks/useGetBookDetails";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFavorites } from "../../hooks/useFavorites";
 import styles from "../../styles/BookDetails.module.css";
 
 export default function BookDetails({ bookId, onBack }) {
   const { bookDetails, loading, error, getDetails } = useGetBookDetails();
   const { toggleFavorite, isFavorited } = useFavorites();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // Get details when component mounts or bookId changes
   useEffect(() => {
@@ -66,20 +67,51 @@ export default function BookDetails({ bookId, onBack }) {
                   .join(", ")}
               </p>
             )}
+            {bookDetails.summaries && bookDetails.summaries.length > 0 && (
+              <div className={styles.summarySection}>
+                <div
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className={styles.summaryToggle}
+                >
+                  <span className={styles.expandIcon}>
+                    {" "}
+                    {isExpanded ? "▼" : "▶"}
+                  </span>
+                  <span>{isExpanded ? "Hide" : "Read"} Summary</span>
+                </div>
+                {isExpanded && (
+                  <div className={styles.summaryContent}>
+                    {bookDetails.summaries.map((summary, index) => {
+                      const cleanSummary = summary
+                        .replace(
+                          /\(This is an automatically generated summary\.\)/gi,
+                          ""
+                        )
+                        .trim();
+
+                      return cleanSummary ? (
+                        <p key={index} className={styles.summaryText}>
+                          {cleanSummary}
+                        </p>
+                      ) : null;
+                    })}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
           {bookDetails.formats && (
             <p>
               <a
-                href={bookDetails.formats["text/plain; charset=us-ascii"]}
+                // href={bookDetails.formats["text/plain; charset=us-ascii"]}
+                href={
+                  bookDetails.formats["text/html"] ||
+                  bookDetails.formats["text/html; charset=utf-8"] ||
+                  bookDetails.formats["text/plain; charset=us-ascii"]
+                }
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: "block",
-                  maxWidth: "100%",
-                  wordWrap: "break-word",
-                  overflowWrap: "break-word",
-                  whiteSpace: "normal",
-                }}
+                className={styles.readOnlineLink}
               >
                 {/* {bookDetails.formats["text/plain; charset=us-ascii"]} */}
                 📖 Read Online
