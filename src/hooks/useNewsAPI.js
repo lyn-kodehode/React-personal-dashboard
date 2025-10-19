@@ -17,8 +17,10 @@ export default function useNewsAPI() {
     }
 
     // in production (deployed on Vercel)
-    // URL needs to be updated after deployment
-    return "/api/news";
+    return "https://react-personal-dashboard-seven.vercel.app/api/news";
+
+    // works on Vercel only not GH-pages
+    // return "/api/news";
   };
 
   //   Build API based on mode
