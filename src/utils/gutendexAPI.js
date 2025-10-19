@@ -1,7 +1,7 @@
 export const gutendex_base_url = "https://gutendex.com/books";
 
-export const searchBooks = async (query) => {
-  const searchEndpoint = `${gutendex_base_url}?search=${query}`;
+export const searchBooks = async (query, page = 1) => {
+  const searchEndpoint = `${gutendex_base_url}?search=${query}&page=${page}`;
 
   try {
     const response = await fetch(searchEndpoint);

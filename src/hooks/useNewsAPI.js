@@ -9,28 +9,40 @@ export default function useNewsAPI() {
   const [apiMode, setApiMode] = useState(""); // 'headlines', 'search', 'category'
   const [shouldFetch, setShouldFetch] = useState(false);
 
+  // Determine API URL based on environment
+  const getApiBaseUrl = () => {
+    // in development (localhost)
+    if (import.meta.env.DEV) {
+      return "http://localhost:5173/api/news";
+    }
+
+    // in production (deployed on Vercel)
+    // URL needs to be updated after deployment
+    return "/api/news";
+  };
+
   //   Build API based on mode
   const buildApiUrl = () => {
-    const baseUrl = "https://newsapi.org/v2";
-    // const apiKey = "e19e8f7b0de54c3d8478d98e40f503a0";
-    const apiKey = "b54437915d3b4373977298bd9c0842df";
+    // const baseUrl = "https://newsapi.org/v2";
+    const baseUrl = getApiBaseUrl();
 
     switch (apiMode) {
       case "search":
         // Global search across all sources, categories etc >> data.articles
-        return `${baseUrl}/everything?q=${searchQuery}&apiKey=${apiKey}&pageSize=10`;
+        // return `${baseUrl}/everything?q=${searchQuery}&pageSize=10`;
+        return `${baseUrl}?mode=search&q=${searchQuery}&pageSize=10`;
       case "byCategory":
         // returns headlines per category in the US >> data.articles
-        return `${baseUrl}/top-headlines?category=${newsCategory}&country=us&apiKey=${apiKey}&pageSize=10`;
+        return `${baseUrl}?mode=byCategory&=${newsCategory}&country=us&pageSize=10`;
       case "headlines":
         // returns list of headlines in the US in all categories >> data.articles
-        return `${baseUrl}/top-headlines?country=us&apiKey=${apiKey}&pageSize=5`;
+        return `${baseUrl}?mode=headlines&country=us&pageSize=5`;
       case "sources":
         // returns list of sources per category in the US >> data.sources
-        return `${baseUrl}/sources?category=${newsCategory}&country=us&apiKey=${apiKey}`;
+        return `${baseUrl}?mode=sources&category=${newsCategory}&country=us`;
       case "bySource":
         //returns all news per source >> data.articles
-        return `${baseUrl}/top-headlines?sources=${source}&apiKey=${apiKey}`;
+        return `${baseUrl}?mode=bySource&sources=${source}`;
       default:
         return null;
     }

@@ -24,7 +24,7 @@ export default function MyNews() {
         <div className={styles.noResults}>No saved articles yet.</div>
       )}
 
-      <Link to="/React-personal-dashboard/news" className={styles.addMoreLink}>
+      <Link to="/news" className={styles.addMoreLink}>
         Save More Articles
       </Link>
     </div>

@@ -54,10 +54,7 @@ export default function Favorites() {
           </div>
         </div>
       )}
-      <Link
-        to="/React-personal-dashboard/gutendex"
-        className={styles.addMoreLink}
-      >
+      <Link to="/gutendex" className={styles.addMoreLink}>
         Add More Books
       </Link>
     </div>

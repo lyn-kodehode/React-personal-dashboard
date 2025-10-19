@@ -13,68 +13,77 @@ import News from "../components/news/News";
 import MyNews from "../components/news/MyNews";
 import Todo from "../components/todo/Todo";
 
-export const router = createBrowserRouter([
-  {
-    path: "/React-personal-dashboard/",
-    element: <App />,
-    children: [
-      {
-        index: true,
-        element: <Dashboard />,
-      },
-      {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
-      // {
-      //   path: "dev",
-      //   element: <Dev />,
-      // },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "gutendex",
-        element: <Gutendex />,
-        children: [
-          {
-            index: true,
-            element: <BookSearch />,
-          },
-          {
-            path: "search",
-            element: <BookSearch />,
-          },
-          {
-            path: "categories",
-            element: <CategoryMenu />,
-          },
-          {
-            path: "favorites",
-            element: <Favorites />,
-          },
-        ],
-      },
-      {
-        path: "news",
-        element: <News />,
-        children: [
-          { index: true, element: <NewsSearch /> },
-          {
-            path: "categories",
-            element: <NewsCategoryMenu />,
-          },
-          {
-            path: "mynews",
-            element: <MyNews />,
-          },
-        ],
-      },
-      {
-        path: "todo",
-        element: <Todo />,
-      },
-    ],
-  },
-]);
+// Determine base path based on environment from vite.config.js
+// Vercel: basename = /
+// GitHub Pages: basename = /React-personal-dashboard/
+const basename = import.meta.env.BASE_URL || "/";
+
+export const router = createBrowserRouter(
+  [
+    {
+      // path: "/React-personal-dashboard/",
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          index: true,
+          element: <Dashboard />,
+        },
+        {
+          path: "dashboard",
+          element: <Dashboard />,
+        },
+        // {
+        //   path: "dev",
+        //   element: <Dev />,
+        // },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "gutendex",
+          element: <Gutendex />,
+          children: [
+            {
+              index: true,
+              element: <BookSearch />,
+            },
+            {
+              path: "search",
+              element: <BookSearch />,
+            },
+            {
+              path: "categories",
+              element: <CategoryMenu />,
+            },
+            {
+              path: "favorites",
+              element: <Favorites />,
+            },
+          ],
+        },
+        {
+          path: "news",
+          element: <News />,
+          children: [
+            { index: true, element: <NewsSearch /> },
+            {
+              path: "categories",
+              element: <NewsCategoryMenu />,
+            },
+            {
+              path: "mynews",
+              element: <MyNews />,
+            },
+          ],
+        },
+        {
+          path: "todo",
+          element: <Todo />,
+        },
+      ],
+    },
+  ],
+  { basename }
+);
