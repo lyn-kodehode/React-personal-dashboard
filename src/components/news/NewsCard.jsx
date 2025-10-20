@@ -38,7 +38,12 @@ export default function NewsCard({ article }) {
           ) : (
             <span className={`${styles.newsText} ${styles.expanded}`}>
               {cleanContent(content)}{" "}
-              <a href={url} target="_blank" rel="noopener noreferrer">
+              <a
+                className={styles.readNewsLink}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Read full article{" "}
               </a>
             </span>

@@ -7,26 +7,35 @@ export default function About() {
 
       <div className={styles.aboutContent}>
         <p>
-          A personal dashboard for managing your daily information and tasks.
+          A responsive personal dashboard built with React featuring real-time
+          weather, news, book search, and task management.
         </p>
 
         <h2>Features</h2>
         <ul>
           <li>
-            <span className={styles.featureName}>Books</span> - Search and save
-            your favorite books using{" "}
+            <span className={styles.featureName}>Clock</span> - Analog clock
+            with current date display
+          </li>
+          <li>
+            <span className={styles.featureName}>Overview</span> - Quick stats
+            summary of all your saved items
+          </li>
+          <li>
+            <span className={styles.featureName}>Books</span> - Search, save,
+            and read favorite books online from{" "}
             <a
               href="https://gutendex.com/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.aboutApiLink}
             >
-              Gutendex API
+              Project Gutenberg
             </a>
           </li>
           <li>
             <span className={styles.featureName}>News</span> - Browse and save
-            news articles using{" "}
+            articles by category or search (powered by{" "}
             <a
               href="https://newsapi.org/"
               target="_blank"
@@ -35,14 +44,15 @@ export default function About() {
             >
               NewsAPI
             </a>
+            )
           </li>
           <li>
-            <span className={styles.featureName}>Tasks</span> - Manage your
-            tasks
+            <span className={styles.featureName}>Tasks</span> - Create, filter,
+            and manage tasks with local persistence
           </li>
           <li>
-            <span className={styles.featureName}>Weather</span> - Track weather
-            for your cities using{" "}
+            <span className={styles.featureName}>Weather</span> - Track multiple
+            cities with auto-refresh and real-time updates using{" "}
             <a
               href="https://open-meteo.com/"
               target="_blank"
@@ -51,6 +61,10 @@ export default function About() {
             >
               Open Meteo Weather API
             </a>
+          </li>
+          <li>
+            <span className={styles.featureName}>Dark/Light Theme</span> -
+            Toggle between themes with persistent preference
           </li>
         </ul>
 
